@@ -1,27 +1,27 @@
 {
   "schemaVersion": 1,
-  "id": "addon-template",
+  "id": "cafouillage-dupe",
   "version": "${version}",
-  "name": "Addon Template",
-  "description": "An addon template for the Meteor addons.",
+  "name": "Meteor Cafouillage Dupe",
+  "description": "A Meteor addon for automatically duping items on play.cafouillage.com",
   "authors": [
-    "seasnail"
+    "crazycat256"
   ],
   "contact": {
-    "repo": "https://github.com/MeteorDevelopment/meteor-addon-template"
+    "repo": "https://github.com/crazycat256/CafouillageDupe"
   },
   "icon": "assets/template/icon.png",
   "environment": "client",
   "entrypoints": {
     "meteor": [
-      "com.example.addon.Addon"
+      "fr.crazycat256.cafouillagedupe.Addon"
     ]
   },
   "mixins": [
-    "addon-template.mixins.json"
+    "cafouillage-dupe.mixins.json"
   ],
   "custom": {
-    "meteor-client:color": "225,25,25"
+    "meteor-client:color": "255,153,25"
   },
   "depends": {
     "java": ">=17",
