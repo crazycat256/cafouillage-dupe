@@ -2,7 +2,7 @@
   <!-- Logo and Title -->
   <img src="/src/main/resources/assets/template/icon.png" alt="logo" width="20%"/>
 <h1>Meteor Cafouillage Dupe</h1>
-<p>An addon to Meteor Client that automate the item frame dupe on 
+<p>An addon to Meteor Client that automate the item frame dupe on `play.cafouillage.com`
 </p>
 </div>
 
