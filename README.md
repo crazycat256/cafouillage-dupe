@@ -11,5 +11,8 @@
 - Put it in your `.minecraft/mods` folder where you have installed Meteor.
 
 # Features
-- Cafouillage Dupe module
-- .itemframedrop command
+- Auto Frame Dupe
+
+
+# Commands
+- .itemframedrop
