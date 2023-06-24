@@ -20,6 +20,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemFrameItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableTextContent;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -258,6 +260,10 @@ public class AutoFrameDupe extends Module {
     private void onTick(TickEvent.Pre event) {
         if (mc.player == null || mc.world == null || mc.interactionManager == null) return;
 
+        if (chronometer.get()) {
+            mc.inGameHud.setOverlayMessage(Text.of("Duration: §f" + DurationFormatUtils.formatDurationWords(System.currentTimeMillis() - startTime, true, true)), false);
+        }
+
         PlayerInventory inv = mc.player.getInventory();
 
         if (autoDisable.get()) {
@@ -373,7 +379,6 @@ public class AutoFrameDupe extends Module {
 
                     for (ItemFrameEntity existingItemFrame: itemFrames) {
                         if (existingItemFrame.getPos().equals(itemFrame.getPos()) && existingItemFrame.getHorizontalFacing() == itemFrame.getHorizontalFacing()) {
-                            /*itemFrames.remove(existingItemFrame);*/ // TODO: check if this works
                             toReplace.remove(itemFrame);
                             continue replaceLoop;
                         }
