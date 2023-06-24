@@ -429,7 +429,7 @@ public class AutoFrameDupe extends Module {
             for (ItemFrameEntity itemFrame: itemFrames) {
                 if ((!dupeItems.get().contains(inv.getMainHandStack().getItem()) || inv.getMainHandStack().getCount() < minStackSize.get()) && swaps < maxSwaps.get()) {
                     for (int i = 0; i < 9; i++) {
-                        if (dupeItems.get().contains(inv.getStack(i).getItem())) {
+                        if (dupeItems.get().contains(inv.getStack(i).getItem()) && inv.getStack(i).getCount() >= minStackSize.get()) {
                             InvUtils.swap(i, false);
                             swaps++;
                             break;
@@ -438,7 +438,7 @@ public class AutoFrameDupe extends Module {
                 }
                 if ((!dupeItems.get().contains(inv.getMainHandStack().getItem()) || inv.getMainHandStack().getCount() < minStackSize.get()) && moves < maxInventoryMoves.get() && !swapped) {
                     for (int i = 0; i < inv.size(); i++) {
-                        if (dupeItems.get().contains(inv.getStack(i).getItem())) {
+                        if (dupeItems.get().contains(inv.getStack(i).getItem()) && inv.getStack(i).getCount() >= minStackSize.get()) {
                             InvUtils.move().from(i).toHotbar(inv.selectedSlot);
                             moves++;
                             break;
