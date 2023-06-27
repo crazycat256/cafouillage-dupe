@@ -331,6 +331,10 @@ public class AutoFrameDupe extends Module {
                 }
                 if (dupeItems.get().contains(inv.getMainHandStack().getItem()) && placements < maxPlacements.get()) {
                     mc.interactionManager.interactEntity(mc.player, emptyItemFrame, Hand.MAIN_HAND);
+                    ItemStack stack = mc.player.getStackInHand(Hand.MAIN_HAND).copy();
+                    stack.setCount(stack.getCount() - 1);
+                    if (stack.getCount() == 0) stack = ItemStack.EMPTY;
+                    mc.player.setStackInHand(Hand.MAIN_HAND, stack);
                     dontHit.remove(emptyItemFrame);
                     placements++;
                 }
